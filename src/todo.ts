@@ -2,7 +2,6 @@
 // - deleteTask(id)
 // - toggleTask(id)
 // const todo = new TODO(new TaskManager(new Store()), new Render())
-import { Task } from "../app/models/task";
 import { TaskManager } from "./services/taskManager";
 import { RenderService } from "./services/renderService";
 
@@ -12,6 +11,7 @@ export class ToDo {
   }
 
   addTask(title: string): void {
+    console.log('as');
     const msg = this.taskManager.createTask(title);
     this.renderService.display(msg);
   }
@@ -25,5 +25,4 @@ export class ToDo {
    const msg = this.taskManager.toggleTask(id);
    this.renderService.display(msg);
   }
-
 }
